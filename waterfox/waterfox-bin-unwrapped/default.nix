@@ -37,7 +37,7 @@ stdenv.mkDerivation {
     if stdenv.hostPlatform.isLinux then
       fetchurl {
         url = "https://cdn.waterfox.com/waterfox/releases/${version}/${arch}/waterfox-${version}.tar.bz2";
-        hash = "sha256-9nQDEEaHowHif7Oh7+17/r9q3Zl60PPepGWleXy+oiA=";
+        hash = "sha256-x1GkUkKytKhCZ4FYGeedHr0uuF8dWtdVKOVLlvgmeFE=";
       }
     else
       fetchurl {
