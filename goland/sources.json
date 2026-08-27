@@ -1,0 +1,19 @@
+{
+  "version": "2026.2.2.1",
+  "buildNumber": "262.9437.286",
+  "systems": {
+    "x86_64-linux": {
+      "url": "https://download.jetbrains.com/go/goland-2026.2.2.1.tar.gz",
+      "hash": "sha256-nT/jmw0WFNwmtWR5be0KBUHJpM48phhYN7oUNOMCrok="
+    },
+    "aarch64-linux": {
+      "url": "https://download.jetbrains.com/go/goland-2026.2.2.1-aarch64.tar.gz",
+      "hash": "sha256-t6vH7fxtysgprc1EHH3XiIdHD6oCMcY/a1hu5aiYMxE="
+    },
+    "aarch64-darwin": {
+      "url": "https://download.jetbrains.com/go/goland-2026.2.2.1-aarch64.dmg",
+      "hash": "sha256-zrQAsOOR4OhAXnebwnRk3da4h4Gi0t8f+SIaEAiwM0Q="
+    }
+  }
+}
+
