@@ -4,7 +4,7 @@
   "systems": {
     "x86_64-linux": {
       "url": "https://download.jetbrains.com/go/goland-2026.2.1.1.tar.gz",
-      "hash": "sha256-nT/jmw0WFNwmtWR5be0KBUHJpM48phhYN7oUNOMCrok="
+      "hash": "sha256-QePCoQBagyGQ07KjWbki5YNnQslCj8PmYyh/isvC0mo=",
     },
     "aarch64-linux": {
       "url": "https://download.jetbrains.com/go/goland-2026.2.2.1-aarch64.tar.gz",
