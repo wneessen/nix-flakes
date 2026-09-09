@@ -19,7 +19,7 @@
 }:
 let
   pname = "waterfox-bin-unwrapped";
-  version = "6.7.1.1";
+  version = "6.7.2";
 
   binaryName = "waterfox";
   mozillaPlatforms = {
@@ -37,7 +37,7 @@ stdenv.mkDerivation {
     if stdenv.hostPlatform.isLinux then
       fetchurl {
         url = "https://cdn.waterfox.com/waterfox/releases/${version}/${arch}/waterfox-${version}.tar.bz2";
-        hash = "sha256-eJKCbcHfTU3LG/9bUm0guzH0LpDc2dSuoohOWVlBwd4=";
+        hash = "sha256-35kleSBP4MomjDalWA6FVJqVlK/Lg6VYwUGPOqDIL2w=";
       }
     else
       fetchurl {
