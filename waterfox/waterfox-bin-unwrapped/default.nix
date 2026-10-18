@@ -7,8 +7,11 @@
   curl,
   dbus-glib,
   fetchurl,
+  ffmpeg,
+  udev,
   gtk3,
   lib,
+  libGL,
   libva,
   libXtst,
   patchelfUnstable,
@@ -19,7 +22,7 @@
 }:
 let
   pname = "waterfox-bin-unwrapped";
-  version = "6.7.5";
+  version = "6.7.6";
 
   binaryName = "waterfox";
   mozillaPlatforms = {
@@ -37,7 +40,7 @@ stdenv.mkDerivation {
     if stdenv.hostPlatform.isLinux then
       fetchurl {
         url = "https://cdn.waterfox.com/waterfox/releases/${version}/${arch}/waterfox-${version}.tar.bz2";
-        hash = "sha256-n4Mp7x+Utg8pEoH52o81oO6dWHLDof7526dinsokoLE=";
+        hash = "sha256-kxY7aDUaWKTWZFchm5Xvhv5wZqZSTYG7bKvXR956kFY=";
       }
     else
       fetchurl {
@@ -70,6 +73,8 @@ stdenv.mkDerivation {
   runtimeDependencies = [
     curl
     pciutils
+    udev
+    libGL
   ]
   ++ lib.optionals (!stdenv.hostPlatform.isDarwin) [
     libva.out
@@ -77,6 +82,8 @@ stdenv.mkDerivation {
 
   appendRunpaths = lib.optionals (!stdenv.hostPlatform.isDarwin) [
     "${pipewire}/lib"
+    "${libGL}/lib"
+    "${udev}/lib"
   ];
 
   # Firefox uses "relrhack" to manually process relocations from a fixed offset
