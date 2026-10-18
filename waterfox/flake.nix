@@ -1,20 +1,19 @@
 {
-  description = "Nix implementation of Waterfox";
+  description = "Waterfox browser (official Linux x64 binaries)";
+
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-  outputs =
-    { self, nixpkgs }:
+
+  outputs = { self, nixpkgs }:
     let
-      forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
-      legacyPackages = forAllSystems (
-        system:
-        import ./default.nix {
-          pkgs = import nixpkgs { inherit system; };
-        }
-      );
-      packages = forAllSystems (
-        system: nixpkgs.lib.filterAttrs (_: v: nixpkgs.lib.isDerivation v) self.legacyPackages.${system}
-      );
+      packages.${system} = rec {
+        waterfox-bin-unwrapped = pkgs.callPackage ./package.nix { };
+        waterfox-bin = pkgs.wrapFirefox waterfox-bin-unwrapped { pname = "waterfox-bin"; };
+        default = waterfox-bin;
+      };
     };
 }
+
