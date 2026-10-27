@@ -33,7 +33,7 @@ stdenv.mkDerivation {
   ## hash=$(export VERSION="6.7.7"; nix-prefetch-url --type sha256 --unpack https://cdn.waterfox.com/waterfox/releases/$VERSION/Linux_x86_64/waterfox-$VERSION.tar.bz2) && nix hash convert --to sri --hash-algo sha256 ${hash}
   src = fetchurl {
     url = "https://cdn.waterfox.com/waterfox/releases/${version}/Linux_x86_64/waterfox-${version}.tar.bz2";
-    hash = "sha256-CiPDp9pwRHVxBrKufO6UCCIFYq0VZWHfpQ7W+581QMk=";
+    hash = "sha256-8KHGIAEU2lMJi78twSc60dnuvg2s5MLtM7eFsZlzLWA=";
   };
 
   nativeBuildInputs = [
