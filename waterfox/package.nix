@@ -18,7 +18,7 @@
 }:
 
 let
-  version = "6.7.6";
+  version = "6.7.7";
   libName = "waterfox-bin-${version}";
 
   policiesJson = writeText "waterfox-policies.json" (
@@ -29,9 +29,11 @@ stdenv.mkDerivation {
   pname = "waterfox-bin-unwrapped";
   inherit version;
 
+  ## To update run:
+  ## hash=$(export VERSION="6.7.7"; nix-prefetch-url --type sha256 --unpack https://cdn.waterfox.com/waterfox/releases/$VERSION/Linux_x86_64/waterfox-$VERSION.tar.bz2) && nix hash convert --to sri --hash-algo sha256 ${hash}
   src = fetchurl {
     url = "https://cdn.waterfox.com/waterfox/releases/${version}/Linux_x86_64/waterfox-${version}.tar.bz2";
-    hash = "sha256-kxY7aDUaWKTWZFchm5Xvhv5wZqZSTYG7bKvXR956kFY=";
+    hash = "sha256-CiPDp9pwRHVxBrKufO6UCCIFYq0VZWHfpQ7W+581QMk=";
   };
 
   nativeBuildInputs = [
