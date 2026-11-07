@@ -30,10 +30,10 @@ stdenv.mkDerivation {
   inherit version;
 
   ## To update run:
-  ## hash=$(export VERSION="6.7.7"; nix-prefetch-url --type sha256 --unpack https://cdn.waterfox.com/waterfox/releases/$VERSION/Linux_x86_64/waterfox-$VERSION.tar.bz2) && nix hash convert --to sri --hash-algo sha256 ${hash}
+  ## hash=$(export VERSION="6.7.8"; nix-prefetch-url --type sha256 https://cdn.waterfox.com/waterfox/releases/$VERSION/Linux_x86_64/waterfox-$VERSION.tar.bz2) && nix hash convert --to sri --hash-algo sha256 ${hash}
   src = fetchurl {
     url = "https://cdn.waterfox.com/waterfox/releases/${version}/Linux_x86_64/waterfox-${version}.tar.bz2";
-    hash = "sha256-jOnFFa98COsXt34PM2eZUj4S4Yr29+EvmTqHWnpI8Ww=";
+    hash = "sha256-Kbi8wCZf3qfc8EccbvjilvSMppc+A5udGBqT57ZU7xU=";
   };
 
   nativeBuildInputs = [
